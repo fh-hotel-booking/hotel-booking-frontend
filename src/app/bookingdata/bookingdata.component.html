@@ -1,0 +1,27 @@
+<input type="text" placeholder="Filter by hotel name" #filter>
+<button class="primary" type="button" (click)="getBookingData(filter.value)">Search</button>
+
+<p-table [value]="bookingData" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Hotel Name</th>
+      <th>Room Name</th>
+      <th>Amount of Beds</th>
+      <th>Price</th>
+      <th>City</th>
+      <th>Country</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-hotel>
+    <tr>
+      <td>{{ hotel.id }}</td>
+      <td>{{ hotel.hotelName }}</td>
+      <td>{{ hotel.roomName }}</td>
+      <td>{{ hotel.amountOfBeds }}</td>
+      <td>{{ hotel.price }}</td>
+      <td>{{ hotel.city }}</td>
+      <td>{{ hotel.country }}</td>
+    </tr>
+  </ng-template>
+</p-table>
